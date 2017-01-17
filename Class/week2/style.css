@@ -15,3 +15,20 @@
     min-height: 600px;
     max-height: 600px;
 }
+
+#row1{
+  height: 300px;
+  min-height: 300px;
+  max-height: 300px;
+}
+
+#main #row2 [class*='col-md-3'] {
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+}
+#main #row3 [class*='col-md-3'] {
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+}
