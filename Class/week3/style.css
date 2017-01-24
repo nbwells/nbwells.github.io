@@ -1,20 +1,45 @@
-.header {
-    height: 50px;
-    min-height: 50px;
-    max-height: 50px;
-}
-.footer {
+.header, .footer {
     height: 100px;
     min-height: 100px;
     max-height: 100px;
 }
-#main [class*='col-md-8'] {
+
+.row3 {
+    height: 50px;
+    min-height: 50px;
+    max-height: 50px;
+}
+
+.row1 {
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+}
+
+.r8 {
     height: 400px;
     min-height: 400px;
     max-height: 400px;
 }
-#main [class*='col-md-2'] {
+
+.r2 {
     height: 400px;
     min-height: 400px;
     max-height: 400px;
+}
+
+body {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.leftColumn{
+  height: 100px;
+  min-height:100px;
+  max-height: 100px;
+}
+.middleColumn{
+  height:50px;
+  min-height:50px;
+  max-height:50px;
 }
