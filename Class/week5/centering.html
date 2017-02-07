@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Center</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <style media="screen">
+        body{
+          display: none;
+        }
+        .container-fluid {
+            font-family: 'Oswald', sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .centerType {
+            padding: 0 5px;
+            background-color: rgba(255, 0, 0, 0.4);
+        }
+
+        .randomColor {
+            height: 300px;
+            min-height: 300px;
+            max-height: 300px;
+            border: 1px solid black;
+        }
+        /*------------*/
+        .paddingMargin img {
+            margin-top: 8%;
+            margin-left: 30%;
+        }
+
+        .paddingMargin div {
+            margin-left: 20%;
+        }
+
+        /*------------*/
+        /*------------*/
+        .textAlignCenter {
+            text-align: center;
+        }
+        /*------------*/
+        /*------------*/
+        .marginAuto {
+            margin: 0 auto;
+            width: 50%;
+        }
+        /*------------*/
+        /*------------*/
+        img.displayed {
+            display: block;
+            margin-left: auto;
+            margin-right: auto
+        }
+        /*------------*/
+        /*------------*/
+        .paddingMarginPlus img {
+            padding-top: 10%;
+            padding-bottom: 3%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .paddingMarginPlus div {
+            padding: 3%;
+        }
+        /*------------*/
+        /*------------*/
+        .horAndVertRelativeContainer {
+            position: relative;
+        }
+
+        .horAndVertRelativeContainer img {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .horAndVertRelativeContainer div {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /*------------*/
+        /*------------*/
+        .horAndVertRelativeWithChild {
+            position: relative;
+        }
+
+        .horAndVertAbsoluteChild {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /*------------*/
+        /*------------*/
+        .horAndVertFlexContainerElementsVertical {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+        }
+        .horAndVertFlexContainerElementsVertical div{
+          width:60%;
+        }
+        /*------------*/
+        /*------------*/
+        .horAndVertFlexContainerElementsHorizontal {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="textAlignCenter">The Holy Grail of Centering</h1>
+            </div>
+        </div>
+        <!--    First Row         -->
+        <div class="row">
+            <div class="col-md-4 randomColor paddingMargin">
+                <span class="centerType">Padding / Margin</span>
+                <br>
+                <img src="images/luckyTama.png">
+                <div>
+                    Top/Left Padding and Margin
+                </div>
+            </div>
+            <div class="col-md-4 randomColor">
+                <div class="textAlignCenter">
+                    Horizontal; text-align:center centers text within the element like MSWord. This div by default case spans the whole width of the col;
+                </div>
+            </div>
+            <div class="col-md-4 randomColor">
+                <div class="marginAuto">Horizontal using margin:0 auto. Works on block level item of smaller width than container. This div is 50% width</div>
+            </div>
+        </div>
+          <!--   Second Row          -->
+        <div class="row">
+            <div class="col-md-4 randomColor">
+                <img src="images/luckyTama.png" class="displayed">
+                <div class="Text">
+                    Horizontal. margin:0 auto will only work on an on inline element like img if we make it display:block
+                </div>
+            </div>
+            <div class="col-md-4 randomColor paddingMarginPlus">
+                <img src="images/luckyTama.png">
+                <div class="textAlignCenter">
+                    Top/Left Padding Margin Plus
+                </div>
+            </div>
+            <div class="col-md-4 randomColor horAndVertRelativeContainer">
+                <span class="centerType">Position</span>
+                <img src="images/luckyTama.png">
+                <div>
+                    Horizonally and Vertical using position
+                </div>
+            </div>
+        </div>
+          <!--   Third Row        -->
+        <div class="row">
+            <div class="col-md-4 randomColor horAndVertRelativeWithChild">
+                <div class="horAndVertAbsoluteChild">
+                    <img src="images/luckyTama.png" class="displayed">
+                    <div class="textAlignCenter">
+                        Horizonally and Vertical with multiple elements using positioned container and more css on inner elements.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 randomColor horAndVertFlexContainerElementsVertical">
+                <span class="centerType">Flex</span>
+                <img src="images/luckyTama.png">
+                <div class="textAlignCenter">
+                    Horizonally and Vertically multiple elements using flex; elements vertical
+                </div>
+            </div>
+            <div class="col-md-4 randomColor horAndVertFlexContainerElementsHorizontal">
+                <img src="images/luckyTama.png">
+                <div class="textAlignCenter">
+                    Hor and Vert using flex
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+        function getRandomNumber() {
+            return Math.floor(Math.random() * 55 + 200);
+        }
+
+        $(document).ready(function() {
+
+            var bodyColumns = $(".randomColor");
+
+            bodyColumns.each(function() {
+
+                $(this).css("background-color", "rgb(" + getRandomNumber() + "," + getRandomNumber() + "," + getRandomNumber() + ")");
+
+            })
+
+            $("body").css("background-color", "rgb(" + getRandomNumber() + "," + getRandomNumber() + "," + getRandomNumber() + ")");
+            $("body").fadeIn();
+
+
+        })
+    </script>
+</body>
+
+</html>

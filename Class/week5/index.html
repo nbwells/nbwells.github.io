@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Five Boxes </title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        .top {
+            min-height: 75px;
+            max-height: 75px;
+            height: 75px;
+        }
+        h1{
+          text-align: center;
+        }
+        .marginAuto{
+          margin: 0 auto;
+          width:70%;
+        }
+        .displayblock img{
+          display: block;
+          max-width: 20px;
+          max-height: 20px;
+        }
+
+        .mid {
+            min-height: 400px;
+            max-height: 400px;
+            height: 400px;
+        }
+        .padding{
+          padding-left: 15%;
+        }
+
+        .bot {
+            min-height: 150px;
+            max-height: 150px;
+            height: 150px;
+        }
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="main" class="container">
+        <div class="row">
+            <div class="col-md-3 randomColor top">
+              <h1> Positioning </h1>
+            </div>
+            <div class="col-md-7 randomColor top">
+              <div class="marginAuto">
+                <p>
+                  Aligning with margin: 0 auto works well to center text horizontally within a div/box.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-1 randomColor top">
+  
+            </div>
+            <div class="col-md-1 randomColor top">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 randomColor mid">
+              <img src="images/flower.jpg" class="padding" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 randomColor bot">
+            </div>
+            <div class="col-md-3 randomColor bot">
+            </div>
+            <div class="col-md-3 randomColor bot">
+            </div>
+            <div class="col-md-3 randomColor bot">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * max + min);
+        }
+
+        $(document).ready(function() {
+
+            var bodyColumns = $(".randomColor");
+
+            bodyColumns.each(function() {
+
+                $(this).css("background-color", "rgb(" + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + ")");
+
+            })
+
+            $("body").css("background-color", "rgb(" + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + ")");
+
+        })
+    </script>
+</body>
+
+</html>
