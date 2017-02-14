@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Centering Pictures</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        .topRow {
+            height: 50px;
+            min-height: 50px;
+            max-height: 50px;
+        }
+
+        .firstText h1{
+            height: 100px;
+            min-height: 100px;
+            max-height: 100px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .secondText {
+            height: 100px;
+            min-height: 100px;
+            max-height: 100px;
+        }
+
+        .secondText img {
+            height: 75%;
+            padding-top: 15px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .bottomRow {
+            height: 150px;
+            min-height: 150px;
+            max-height: 150px;
+        }
+
+        #pic1 {
+            padding-top: 8%;
+            padding-left: 15%;
+        }
+
+        .pic2 {
+            padding-top: 8%;
+            padding-left: 10%;
+        }
+
+        .rightGallery img {
+            margin-left: 42%;
+        }
+
+        .rightGallery div {
+            text-align: center;
+        }
+        .relativeParent {
+          position: relative;
+        }
+        .relativeParent img{
+          position: absolute;
+          top:50%;
+          left:50%;
+          transform: translate( -50%, -50%);
+        }
+        .relativeParent2 {
+          position: relative;
+        }
+        .relativeParent2 img{
+          position: absolute;
+          top:50%;
+          left:50%;
+          transform: translate( -50%, -50%);
+        }
+        #pic2SideBySide1{
+          left:30%;
+        }
+        #pic2SideBySide2{
+          left:70%;
+        }
+
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="main" class="container">
+        <div class="row">
+            <!-- Header -->
+            <div class="col-md-3 randomColor topRow">
+            </div>
+            <div class="col-md-6 topRow">
+            </div>
+            <div class="col-md-1 randomColor topRow">
+            </div>
+            <div class="col-md-1 randomColor topRow">
+            </div>
+            <div class="col-md-1 randomColor topRow">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 randomColor firstText">
+                <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </h1>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 randomColor secondText">
+                <img src="images/pattern1.jpg" alt="brown pattern" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 randomColor bottomRow">
+                <img id="pic1" src="images/pattern2.jpg" alt="black and white pattern" />
+            </div>
+            <div class="col-md-4 randomColor bottomRow">
+                <img class="pic2" src="images/pattern3.jpg" alt="lines" />
+                <img class="pic2" src="images/pattern4.jpg" alt="zig-zags" />
+            </div>
+            <div class="col-md-4 randomColor bottomRow rightGallery">
+                <img id="pic3" src="images/pattern5.jpg" alt="peacock" />
+                <div>
+                    This peacock feather is pretty.
+                </div>
+                <div>
+                    $25.00
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 randomColor bottomRow relativeParent">
+              <img src="images/pattern8.jpg" alt="blue swirl" />
+            </div>
+            <div class="col-md-4 randomColor bottomRow relativeParent2">
+              <img id="pic2SideBySide1" src="images/pattern6.jpg" alt="painting of a girl" />
+              <img id="pic2SideBySide2" src="images/pattern7.jpg" alt="flower"/>
+            </div>
+            <div class="col-md-4 randomColor bottomRow">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 randomColor bottomRow">
+            </div>
+            <div class="col-md-4 randomColor bottomRow">
+            </div>
+            <div class="col-md-4 randomColor bottomRow">
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * max + min);
+        }
+
+        $(document).ready(function() {
+
+            var bodyColumns = $(".randomColor");
+
+            bodyColumns.each(function() {
+
+                $(this).css("background-color", "rgb(" + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + ")");
+
+            })
+
+            $("body").css("background-color", "rgb(" + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + ")");
+
+        })
+    </script>
+</body>
+
+</html>
