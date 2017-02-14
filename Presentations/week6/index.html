@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Wireframing</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <style>
+  .header{
+    height: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    text-align: center;
+  }
+  .nav{
+    height:50px;
+    min-height: 50px;
+    max-height: 50px;
+    text-align: center;
+  }
+  .about{
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+  }
+  .image{
+    height:200px;
+    min-height: 200px;
+    max-height: 200px;
+  }
+  .larryImage{
+
+  }
+  .link{
+    height: 50px;
+    min-height: 50px;
+    max-height: 50px;
+    text-align: center;
+  }
+  .additionalInfo{
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+  }
+  .footer{
+    height: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    text-align: center;
+  }
+  </style>
+  <body>
+    <div id="main" class="container">
+      <div class="row">
+        <div class="col-md-12 randomColor header">
+            Larry the Leaser
+          </div>
+        </div>
+
+      <div class="row">
+        <div class="col-md-2 randomColor nav">
+        </div>
+        <div class="col-md-2 randomColor nav">
+          <a href="">HOME</a>
+        </div>
+        <div class="col-md-2 randomColor nav">
+          <a href="">CARS</a>
+        </div>
+        <div class="col-md-2 randomColor nav">
+          <a href="">PROMOTIONS</a>
+        </div>
+        <div class="col-md-2 randomColor nav">
+          <a href="">SERVICES</a>
+        </div>
+        <div class="col-md-2 randomColor nav">
+          <a href="">CONTACT</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 randomColor about">
+
+          <h1>ABOUT US</h1>
+          <p>
+            This website layout allows Larry's potential customers to easily
+            navigate the site, meaning that they will be able to find vehicles
+            and the wanted information quickly, in turn leading to more sales for Larry the Leaser.
+          </p>
+          <p>
+            I used the images to work as links to create visual interest in the navigation, which
+            customers may ignore, as phones have made us used to scrolling rather than clicking.
+            The large images encourage customers to dig deeper into his site, exploring important information.
+            This also adds a visual element, and makes the site more interesting.
+          </p>
+          <p>
+            Because some of the most important elements of a car leasing site would be the cars, and location
+            of the business, I wanted to ensure that the cars available were emphasized through their own link with an image.
+            This increases the functionality of the website.
+          </p>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 randomColor image">
+          <a href=""><img id="larryImage" src="images/larry.jpg" alt="Larry" /></a>
+
+        </div>
+        <div class="col-md-4 randomColor image">
+          <a href=""><img id="carImage" src="images/cars.jpg" alt="Cars" /></a>
+        </div>
+        <div class="col-md-4 randomColor image">
+            <a href=""><img id="communityImage" src="images/community.jpg" alt="community" /></a>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-4 randomColor link">
+          <a href="">Our Staff</a>
+        </div>
+        <div class="col-md-4 randomColor link">
+          <a href="">Our Cars</a>
+        </div>
+        <div class="col-md-4 randomColor link">
+          <a href="">Community</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 randomColor additionalInfo">
+
+
+        <p>
+          Through using wireframing to design the website first, you actually saved yourself a lot of time,
+          in addition to planning out ideas effectively. When Anderson asks us to create Bootstrap layouts
+          in class he, in a way, shows us the most basic form of wireframes, simply box sizes.
+        </p>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 randomColor footer">
+         &copy Larry the Leaser
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * max + min);
+        }
+
+        $(document).ready(function() {
+
+            var bodyColumns = $(".randomColor");
+
+            bodyColumns.each(function() {
+
+                $(this).css("background-color", "rgb(" + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + ")");
+
+            })
+
+            $("body").css("background-color", "rgb(" + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + ")");
+
+        })
+    </script>
+  </body>
+</html>
