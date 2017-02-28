@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Javascript Intro</title>
+</head>
+
+<body>
+    Hello World!
+
+    <div id="myDiv">
+      Look, some text!
+    </div>
+    <!-- added jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        //  () means execute a function
+        // double slash means ignore this line
+        /*
+        Everything between this is ignored
+        */
+
+        //  alert("this is a popup");
+
+        console.log("This is for debugging messages");
+        var myvar;
+
+        // in quotes is a string ie. text
+        var myAnotherVar = "Here is my another var";
+
+        //  alert(myAnotherVar); Alerts can show you how far the javaScript is working
+        console.log(myAnotherVar);
+
+        //concatenation (sticking things together)
+
+        var myName = "Wells";
+        var myFirstName = "Nicole"
+        //  alert("My name is "+myFirstName + " and my last name is "+myName);
+        // {} code block
+        function sayMyName() {
+            // everything in code block will be executed
+            console.log("Your name is " + myName);
+        }
+        // calling the function
+        sayMyName();
+
+        // new example function
+        function sayMyName2(name) {
+            console.log("Your name is " + name);
+        }
+        sayMyName2("Mark");
+        sayMyName2("Daniela");
+        // $ means jquery- get document ready. add a function once ready.
+
+        $(document).ready(function(){});
+        /*when the document is ready, jQuery gets the element with id myDiv and
+        calls the HTML function.
+      html function will replace the html within the element
+        */
+        $(document).ready(function(){
+          alert("the document is ready!");
+          $("#myDiv").html("Hey, I was able to change the DOM");
+          $("#myDiv").append(" <br /> add something more!");
+        });
+    </script>
+</body>
+
+</html>
