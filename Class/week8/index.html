@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Modeling</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    .centerDiv{
+      text-align: center;
+    }
+    .row{
+      padding-bottom: 25px;
+    }
+    </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div id="carDiv" class="col-md-12">
+
+      </div>
+    </div>
+    <div class="row">
+      <div id="veggiesDiv" class="col-md-12">
+
+      </div>
+    </div>
+    <div class="row">
+      <div id="tattooDiv" class="col-md-12">
+
+      </div>
+    </div>
+  </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        //our program
+        //three primitive types
+        var mystring = "a string";
+        var myNumber = 2;
+        var myVar = "2";
+        var myBoolean = false;
+        var myVar2 = "true";
+
+        //array; declare with square brackets
+        //declaring an empty array
+        var myArray = [];
+
+        var myFullArray = ["Calen", "Nicole", "Evan"];
+
+        console.log(myFullArray[0]);
+        console.log("myFullArray 2nd value = "+myFullArray[1]);
+
+        var myMixArray = [3, "David", false];
+        myMixArray.push("another value");
+        console.log("myMixArray values: "+myMixArray);
+
+        //type, price, milage, color, fuelType, src
+        //when the page loads, we go to a database and get some info about a car
+        var car = {
+          type : "SUV",
+          price : 45000,
+          mileage : 24,
+          color : "magenta",
+          fuelType : "electric",
+          src : "images/car1.jpg",
+          message : function(){
+            console.log("A car is useful!");
+          }
+        };
+        //object name.property
+        console.log(car.type);
+        console.log(car.price);
+        console.log(car.message());
+
+        $(document).ready(function(){
+          /*
+        $("#carDiv").html("<div id='centerDiv'>");
+        $("#carDiv").html("<div>"+car.type+"</div>");
+        $("#carDiv").append("<img src='"+car.src +"'/>");
+        $("#carDiv").append("<div>"+car.price+"</div>");
+        $("#carDiv").append("</div>");
+        */
+        var myHtml = "<div class='centerDiv'>" +
+        "<div>"+car.type+"</div>" +
+        "<img src='"+car.src +"'/>" +
+        "<div>"+car.price+"</div>" +
+        "</div>"
+
+        $("#carDiv").html(myHtml);
+
+
+      /*
+      products
+      people
+      */
+      var veggies = {
+        name : "Broccoli",
+        price : 4,
+        color : "green",
+        calories : 65,
+        usability : "common",
+        src : "images/veg1.jpg"
+      };
+
+        var myNewHtml = "<div class='centerDiv'>" +
+        "<div>"+veggies.name+"</div>" +
+        "<img src='"+veggies.src +"'/>" +
+        "<div>"+veggies.price+"</div>" +
+          "<div>"+veggies.color+"</div>" +
+        "<div>"+veggies.calories+"</div>" +
+          "<div>"+veggies.usability+"</div>" +
+        "</div>"
+
+        $("#veggiesDiv").html(myNewHtml);
+
+        var tattoo = {
+          name : "Turtle",
+          price : 300,
+          color : "black and white",
+          healing : "short",
+          popularity : "rare",
+          src : "images/tattoo1.jpg"
+        };
+
+          var myThirdHtml = "<div class='centerDiv'>" +
+          "<div>"+tattoo.name+"</div>" +
+          "<img src='"+tattoo.src +"'/>" +
+          "<div>"+tattoo.price+"</div>" +
+          "<div>"+tattoo.color+"</div>" +
+          "<div>"+tattoo.healing+"</div>" +
+          "<div>"+tattoo.popularity+"</div>" +
+          "</div>"
+
+          $("#tattooDiv").html(myThirdHtml);
+
+  });
+
+    </script>
+</body>
+
+</html>
