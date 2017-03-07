@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>4 pics</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    .line1{
+      height: 200px;
+      min-height: 200px;
+      max-height: 200px;
+    }
+    .line2{
+      height: 600px;
+      min-height: 600px;
+      max-height: 600px;
+    }
+    .nested{
+      height:300px;
+      min-height: 300px;
+      max-height: 300px;
+    }
+  img {
+    height:100%;
+    width:100%;
+  }
+
+    .line3{
+      height: 200px;
+      max-height: 200px;
+      min-height: 200px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 hidden-xs line1 randomColor">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 hidden-xs line2 randomColor">
+        </div>
+          <div class="col-md-6 line2 randomColor">
+
+              <div class="col-md-6 pic1 randomColor nested">
+                <img src="images/pic1.jpg" />
+              </div>
+              <div class="col-md-6 pic2 randomColor nested ">
+                <img src="images/pic2.gif" />
+              </div>
+              <div class="col-md-6 pic3 randomColor nested">
+                <img src="images/pic2.png" />
+              </div>
+              <div class="col-md-6 pic4 randomColor nested">
+                <img src="images/pic4.gif" />
+              </div>
+        </div>
+        <div class="col-md-3 hidden-xs line2 randomColor">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 hidden-xs line3 randomColor">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * max + min);
+        }
+
+        $(document).ready(function() {
+
+            var bodyColumns = $(".randomColor");
+
+            bodyColumns.each(function() {
+
+                $(this).css("background-color", "rgb(" + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + ")");
+
+            })
+
+            $("body").css("background-color", "rgb(" + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + ")");
+
+        })
+    </script>
+  </body>
+</html>
