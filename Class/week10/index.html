@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<style>
+    .middle {
+        height: 100px;
+        min-height: 100px;
+        max-height: 100px;
+    }
+
+    #posts,
+    .ads {
+        min-height: 200px;
+    }
+
+    .footer {
+        height: 100px;
+        min-height: 100px;
+        max-height: 100px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 header">
+                <ul class="nav nav-tabs nav-justified">
+                    <li role="presentation" class="active"><a href="#">Home</a></li>
+                    <li role="presentation"><a href="#">Profile</a></li>
+                    <li role="presentation"><a href="#">Messages</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 randomColor ads"></div>
+            <div class="col-md-8" id="posts"></div>
+            <div class="col-md-2 randomColor ads"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 randomColor footer"></div>
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+        function getRandomNumber() {
+            return Math.floor(Math.random() * 55 + 200);
+        }
+
+        $(document).ready(function() {
+
+            var bodyColumns = $(".randomColor");
+
+            bodyColumns.each(function() {
+
+                $(this).css("background-color", "rgb(" + getRandomNumber() + "," + getRandomNumber() + "," + getRandomNumber() + ")");
+
+            })
+
+            $("body").css("background-color", "rgb(" + getRandomNumber() + "," + getRandomNumber() + "," + getRandomNumber() + ")");
+            $("body").fadeIn();
+
+
+        })
+    </script>
+    <script type="text/javascript">
+  /*  <div class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" src="..." alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">Media heading</h4>
+    ...
+  </div>
+</div> */
+/*  var myArray[334, 4235,275,27578,45]
+  var myObjects[{}] */
+
+  // create data for each post
+    var postsData =[
+      {
+        image:"images/image1.jpg",
+        subheading:"It's a beautiful day",
+        content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat mattis sapien, vel vehicula ipsum vestibulum dapibus. Vestibulum bibendum, felis sit amet molestie malesuada, risus dui aliquam ligula, ut porttitor lectus ex ac velit. Vivamus vel faucibus arcu, ut venenatis nulla. "
+      },
+      {
+        image:"images/image2.png",
+        subheading:"Something Different",
+        content:"Cras quis massa molestie, dapibus ex ut, ornare sapien. Phasellus hendrerit ante metus, in placerat mauris pellentesque et. Donec at magna vel augue mollis vulputate eleifend ut nulla. Sed ut auctor leo. "
+      },
+      {
+        image:"images/image3.jpg",
+        subheading:"Another Text",
+        content:"Pellentesque dignissim ipsum id dignissim ornare. Pellentesque ac lobortis metus, ut sagittis orci. Integer imperdiet risus sed sapien sodales vestibulum. "
+      },
+      {
+        image:"images/image4.gif",
+        subheading:"Wowza",
+        content:"Aliquam bibendum diam sed augue finibus, sed pretium dolor egestas. Nullam eget ornare mauris, tempus maximus magna.  "
+      },
+      {
+        image:"images/image5.jpg",
+        subheading:"Can't believe it",
+        content:" Quisque lacinia dignissim tempus. Nunc nec rutrum nulla. Ut a ligula orci. "
+      },
+      {
+        image:"images/image6.jpg",
+        subheading:"It's a beautiful day",
+        content:"Duis urna tellus, laoreet quis blandit non, laoreet consequat est. Proin congue magna nec venenatis efficitur. Aliquam eros nibh, varius ut porta ut, faucibus et erat."
+      }
+    ]
+    var myHtml = "";
+// loop through postsData and build HTML
+    for(var i=0; i<postsData.length; i=i+1){
+    myHtml= myHtml +  '<div class="media">'+
+      '<div class="media-left">'+
+        '<a href="#">'+
+          '<img class="media-object" src="'+postsData[i].image+'" alt="...">'+
+        '</a>'+
+      '</div>'+
+      '<div class="media-body">'+
+        '<h4 class="media-heading">'+postsData[i].subheading+'</h4>'
+        +postsData[i].content+
+      '</div>'+
+    '</div>';
+    }
+    // write the html string to the screen
+    $(document).ready(function(){
+$("#posts").html(myHtml);
+})
+    </script>
+</body>
+
+</html>
