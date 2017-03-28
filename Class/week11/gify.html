@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GIFs</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style media="screen">
+body {
+  background-image: url(images/cats.jpg);
+}
+.images{
+  background-color: #554541;
+}
+#myContainer{
+margin-top: 50px;
+}
+.myInline{
+  display:inline-block;
+  padding-left: 120px;
+
+}
+h1{
+  text-align: center;
+  color: white;
+  font-family: 'Space Mono', monospace;
+  font-size: 100px;
+  font-weight: 700;
+}
+    </style>
+</head>
+
+<body>
+<h1>CATS</h1>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        var gifyurl = "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC"
+        $.get(gifyurl)
+            .done(function(data) {
+
+                    console.log("success!");
+                    console.dir(data);
+                    var myHtml = "";
+                    myHtml += "<div id='myContainer'>"
+                    for (var i = 0; i < 9; i = i + 1) {
+                      console.log("src: "+data.data[i].embed_url);
+
+
+                        myHtml += '<div class="myInline"><iframe class="images" src="' + data.data[i].embed_url + '" width="480" height="457" frameborder="0" class="giphy-embed" allowfullscreen></iframe>' +
+                            '<p><a href="">via GIPHY</a></p></div>';
+                          }
+                          myHtml += "</div>" //close container
+
+                        $("body").append(myHtml);
+                    })
+
+                .fail(function(data) {
+                    console.log("fail");
+                    console.dir(data);
+                });
+    </script>
+</body>
+
+</html>
