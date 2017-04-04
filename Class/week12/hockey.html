@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NHL Rookie Leaders</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Coda" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<style>
+    .height1 {
+        height: 75px;
+        min-height: 75px;
+        max-height: 75px;
+    }
+
+    .height2 {
+        height: 800px;
+        min-height: 800px;
+        max-height: 800px;
+    }
+
+    body {
+        font-family: 'Coda', cursive;
+    }
+
+    #playerInfo img {
+        width: 200px;
+        float: left;
+    }
+
+    #playerInfo div {
+        padding-top: 100px;
+        padding-left: 350px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 height1 randomColor">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 height2 randomColor">
+
+            </div>
+            <div class="col-md-8 height2">
+                <div id="playerInfo">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/NHL_Logo_former.svg/996px-NHL_Logo_former.svg.png" alt="player" />
+                    <div>
+                        NHL Rookie Scoring Leaders
+                    </div>
+                </div>
+                <table id="statsTable" class="table table-hover">
+                    <tr>
+                        <th></th>
+                        <th> Player
+                        </th>
+                        <th>Team
+                        </th>
+                        <th>Pos
+                        </th>
+                        <th>GP
+                        </th>
+                        <th>G
+                        </th>
+                        <th>A
+                        </th>
+                        <th>P
+                        </th>
+
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-2 height2 randomColor">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 height1 randomColor">
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * max + min);
+        }
+
+        $(document).ready(function() {
+
+            var bodyColumns = $(".randomColor");
+
+            bodyColumns.each(function() {
+
+                $(this).css("background-color", "rgb(" + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + "," + getRandomNumber(0, 255) + ")");
+
+            })
+
+
+
+        })
+    </script>
+    <script type="text/javascript">
+        var url = "https://andersonguelphjs.github.io/class/week12/myJson.json";
+
+        $.getJSON(url)
+            .done(function(data) {
+                console.log("success!");
+                console.dir(data);
+                var myHtml = "";
+                for (var i = 0; i < data.length; i++) {
+              //      console.log("i " + i + " name " + data[i].name);
+
+                    myHtml += "<tr data-index='" + i + "'>" + //making an attribute
+                        "<td>" + (i + 1) + "</td>" + //rank
+                        "<td>" + data[i].name + "</td>" +
+                        "<td>" + data[i].team + "</td>" +
+                        "<td>" + data[i].position + "</td>" +
+                        "<td>" + data[i].gamesPlayed + "</td>" +
+                        "<td>" + data[i].goals + "</td>" +
+                        "<td>" + data[i].assists + "</td>" +
+                        "<td>" + data[i].points + "</td>" +
+                        "</tr>";
+                }
+                $(document).ready(function() {
+                    $("#statsTable").append(myHtml);
+                    // for all td in statsTable turn on a click, then execute the function
+                    $("#statsTable").find("td").on("click", function() {  //"mouseover can be used instead of click"
+                      //get the closest row of this td and get the data-index attribute
+                        var index = $(this).closest("tr").attr("data-index");
+                        console.log("index:" + index);
+                        //change the src attr to the correct image
+                        $("#playerInfo").find("img").attr("src", data[index].image);
+                        //replace the html in the playerInfo div with player details
+                        $("#playerInfo").find("div").html(data[index].details);
+                    })
+                })
+            }) //chaining commands between .done and .fail, therefore no semi-colon
+            .fail(function(data) {
+                console.log("fail!");
+                console.dir(data);
+            })
+    </script>
+</body>
+
+</html>

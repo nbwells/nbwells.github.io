@@ -1,0 +1,72 @@
+[{
+        "name": "Samsung Galaxy S7",
+        "image": "https://github.com/nbwells/nbwells.github.io/tree/master/Class/week12/images/cellphone.png",
+        "price": "$100",
+        "seller":"Koodo Mobile",
+        "details": "Available with a Tab Large. The Samsung Galaxy S7 knows no limits."
+
+    },
+    {
+        "name":"Apple Iphone 4s",
+        "image": "https://github.com/nbwells/nbwells.github.io/tree/master/Class/week12/images/cellphone.png",
+        "price": "95.97",
+        "seller":"AliExpress.com",
+        "details":"Unlocked, 16GB/32GB/64GB"
+    },
+    {
+        "name":"Apple Iphone 5 ",
+        "image": "https://github.com/nbwells/nbwells.github.io/tree/master/Class/week12/images/cellphone.png",
+        "price":"$229.99",
+        "seller":"FactoryDirect.ca",
+        "details": "16GB Unlocked GSM Smartphone - White"
+    },
+    {
+        "name":"Acer Acer Liquid Zest 5 3G Smartphone",
+        "image": "https://github.com/nbwells/nbwells.github.io/tree/master/Class/week12/images/cellphone.png",
+        "price":"$99.00",
+        "seller":"Walmart",
+        "details":"Acer Liquid Zest packs a 8-megapixel primary camera on the rear and a 5-megapixel "
+    },
+    {
+        "name":"Unlocked Apple Iphone 4S 8Gb Smartphone",
+        "image": "https://github.com/nbwells/nbwells.github.io/tree/master/Class/week12/images/cellphone.png",
+        "price":"$129.99",
+        "seller":"FactoryDirect.ca",
+        "details":"Unlocked -- Works with multiple GSM Carriers; No Contract! "
+    },
+    {
+        "name":"Pixel - 32GB - Very Silver",
+        "image": "https://github.com/nbwells/nbwells.github.io/tree/master/Class/week12/images/cellphone.png",
+        "price": "$899.99",
+        "seller":"Google",
+        "details":"A phone by Google. It’s the first phone with the Google Assistant built in. Ask it questions. Tell it to do things."
+    },
+    {
+        "name":"Polaroid 6 Unlocked Android Smartphone Black",
+        "image": "https://github.com/nbwells/nbwells.github.io/tree/master/Class/week12/images/cellphone.png",
+        "price":"$199.99",
+        "seller":"Walmart",
+        "details":"It has everything you need, including an 8MP rear camera, 8GB storage memory, and Android's intuitive Marshmallow operating system."
+    },
+    {
+        "name":"Polaroid 1.8 A2 Unlocked Fliphone Black",
+        "image": "https://github.com/nbwells/nbwells.github.io/tree/master/Class/week12/images/cellphone.png",
+        "price":"$49.97",
+        "seller":"Walmart",
+        "details":"Make a fresh start free from contracts with this unlocked Polaroid LINK A2 wireless handset. It has a VGA rear camera and 128MB of storage."
+    },
+    {
+        "name":"Samsung Galaxy S4 I337 Unlocked Android Smartphone",
+        "image": "https://github.com/nbwells/nbwells.github.io/tree/master/Class/week12/images/cellphone.png",
+        "price":"$299.99",
+        "seller":"FactoryDirect.ca",
+        "details":"Stay connected either on the phone or the Web with the Galaxy S4 I337 from Samsung. 16 GB of memory and a 4G connection"
+    },
+    {
+        "name":"Polaroid 4 Unlocked Android Smartphone Black",
+        "image": "https://github.com/nbwells/nbwells.github.io/tree/master/Class/week12/images/cellphone.png",
+        "price":"$99.97",
+        "seller":"Walmart",
+        "details":"It has everything you need, including a 5MP rear camera, 8GB storage memory."
+    }
+]
